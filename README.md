@@ -20,7 +20,7 @@ db:
 
 makefileが実行できるかを確認
 ```
-make -v
+$ make -v
 GNU Make 3.81
 Copyright (C) 2006  Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.
