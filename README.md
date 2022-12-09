@@ -52,7 +52,7 @@ web         /usr/sbin/httpd -D FOREGROUND    Up      0.0.0.0:80->80/tcp
 ```
 
 その後に
-``docker-compose exec web cp .env.example .env```
+```docker-compose exec web cp .env.example .env```
 を実行し.envファイルが存在しているのを確認する
 
 
