@@ -82,7 +82,8 @@ DB_PASSWORD=root
 make install
 ```
 
-http://localhost:80を実行しLaravelの初期画面が出てたらOK
+http://localhost:80
+を実行しLaravelの初期画面が出てたらOK
 
 
 
