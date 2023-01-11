@@ -11,12 +11,7 @@
 
 M1版のDockerでは現在`platform: linux/x86_64`のイメージがないと使えないので、以下の通り修正してください。
 
-```diff
-db:
-+ platform: linux/x86_64 //追加
-+ image: mysql:8.0＿
-
-```
+- 修正箇所：[docker-compose.yml](https://github.com/quest-academia/qa-laravel-ec-training-ver9/compare/development...m1Mac#diff-e45e45baeda1c1e73482975a664062aa56f20c03dd9d64a827aba57775bed0d3)
 
 makefileが実行できるかを確認
 ```
@@ -70,7 +65,7 @@ APP_URL=http://localhost
 LOG_CHANNEL=stack
 
 DB_CONNECTION=mysql
-DB_HOST=mysql5.7
+DB_HOST=mysql8.0
 DB_PORT=3306
 DB_DATABASE=phpMyAdminで作成したDatabaseの名前をコピペしてください
 DB_USERNAME=root
