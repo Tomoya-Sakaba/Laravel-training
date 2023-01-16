@@ -13,6 +13,13 @@ M1版のDockerでは現在`platform: linux/x86_64`のイメージがないと使
 
 - 修正箇所：[docker-compose.yml](https://github.com/quest-academia/qa-laravel-ec-training-ver9/compare/development...m1Mac#diff-e45e45baeda1c1e73482975a664062aa56f20c03dd9d64a827aba57775bed0d3)
 
+※修正した`docker-compose.yml`はコミット、プッシュしないようにしてください。
+方法は下記を参考にして下さい。
+
+- [git addで変更されたファイルをステージングエリアに追加する方法【初心者向け】](https://techacademy.jp/magazine/10168)
+- [VSCodeでのGitの基本操作まとめ](https://qiita.com/y-tsutsu/items/2ba96b16b220fb5913be#%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%81%97%E3%81%A6%E3%81%BF%E3%82%8B)
+    - 参照部分 → コミットしてみる
+
 makefileが実行できるかを確認
 ```
 $ make -v
@@ -25,7 +32,7 @@ PARTICULAR PURPOSE.
 ```
 *Macはデフォルトで入っている
 
-### Dockerを立ち上げる 
+## Dockerを立ち上げる 
 
 ```sh
 make init
