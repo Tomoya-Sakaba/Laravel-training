@@ -11,8 +11,7 @@
     
     <title>Document</title>
   </head>
-  <body>
-    <h1 class="absolute inset-y-0 left-0 flex items-center ">Laravel</h1>
-  </body>
+<body>
+  <h1>Laravel</h1>
+</body>
 </html>
-    

@@ -1,5 +1,6 @@
 FROM centos:7
 
+EXPOSE 5173
 RUN yum -y update
 
 # リポジトリ epel, remi
@@ -12,7 +13,7 @@ RUN yum -y install --enablerepo=remi,remi-php80 php php-mbstring php-mysqlnd php
 RUN yum -y install zip unzip
 
 # node.jsをインストールVueやtailwind.cssとか使うのに利用します
-RUN yum install -y nodejs npm && npm install n -g && n 16.13
+RUN yum install -y nodejs npm && npm install n -g && n 17.6.0
 
 # composerをインストール
 RUN curl -sS https://getcomposer.org/installer | php
