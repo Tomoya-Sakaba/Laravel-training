@@ -42,15 +42,15 @@
               <option>新着順</option>
             </select>
           </div>
-          <p class="ml-10 mt-4">表示件数：<span>20件</span></p>
-          <!-- <div class="flex">
+          {{-- <p class="ml-10 mt-4">表示件数：<span>20件</span></p> --}}
+          <div class="flex">
             <p class="ml-10 mt-4">表示件数：</p>
             <select class="m-2 px-2 text-sm text-center font-robotoFlex text-gray-900 bg-gray-50 rounded-sm border border-gray-300">
               <option>10件</option>
               <option>20件</option>
-              <option>50件</option>
+              <option>40件</option>
             </select>
-          </div> -->
+          </div>
         </div>
       </div>
       <div class="mr-3">

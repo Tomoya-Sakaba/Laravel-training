@@ -1512,3 +1512,44 @@ video {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(147 197 253 / var(--tw-ring-opacity));
 }
+
+.heading {
+  padding: 3px 4px;
+}
+
+h1 {
+  font-size: 20px;
+  color: #2f6eba;
+  border-bottom: 1px solid #2f6eba;
+  padding: 6px;
+  margin: 20px;
+  font-weight: bold;
+}
+
+.info {
+  margin: 10px 300px;
+  padding: 10px 60px;
+}
+
+.info ul {
+  margin-bottom: 100px;
+}
+
+.info li {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.btn-wrapper a {
+  background-color: #2f6eba;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 7px;
+}
+
+.btn-blue {
+  display: block;
+  width: 170px;
+}
