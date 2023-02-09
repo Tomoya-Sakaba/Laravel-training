@@ -10,7 +10,7 @@
     @vite(['resources/css/dist.css'])
     <!-- 指定フォントですtailwind.config.jsに記載してます -->
     
-    <title>Document</title>
+    <title>商品検索</title>
   </head>
   
   <body>
@@ -25,31 +25,37 @@
       <div>
         <div class="border-t-2 mt-2 border-blue-300 w-11/12 ml-12">　</div>
       </div>
-      <div class="flex justify-around bg-qa-gray h-14 mt-20 w-11/12 ml-12 font-inter">
-        <div class="flex mt-3">
-          <p class="text-xl mr-2">
-            <span class="text-qa-red text-2xl">2500</span
-            ><span class="text-sm text-black ml-1">件中</span>
-          </p>
-          <p class="mt-1.5">1〜20件表示</p>
-        </div>
-        <div class="flex">
-          <p class="ml-16 mt-4">欠品を表示しない</p>
-          <div class="flex">
-            <p class="ml-16 mt-4">並べ替え：</p>
-            <select class="m-2 px-2 text-sm text-center font-robotoFlex text-gray-900 bg-gray-50 rounded-sm border border-gray-300">
-              <option>人気順</option>
-              <option>新着順</option>
-            </select>
-          </div>
-          {{-- <p class="ml-10 mt-4">表示件数：<span>20件</span></p> --}}
-          <div class="flex">
-            <p class="ml-10 mt-4">表示件数：</p>
-            <select class="m-2 px-2 text-sm text-center font-robotoFlex text-gray-900 bg-gray-50 rounded-sm border border-gray-300">
-              <option>10件</option>
-              <option>20件</option>
-              <option>40件</option>
-            </select>
+      <div class="bg-qa-gray h-14 w-11/12 ml-12 mt-20">
+        <div class="mx-4">
+          <div class="flex justify-between font-inter">
+            <div class="flex mt-3 ml-10">
+              <p class="text-xl mr-2">
+                <span class="text-qa-red text-2xl">2500</span
+                ><span class="text-sm text-black ml-1">件中</span>
+              </p>
+              <p class="mt-1.5">1〜20件表示</p>
+            </div>
+            <div class="flex">
+              <div class="mt-0.5">
+                <input type="checkbox" value="" class="w-5 h-5 bg-white border-2 border-black rounded mt-4">
+              </div>
+              <p class="mr-16 mt-4 ml-2">欠品を表示しない</p>
+              <div class="flex">
+                <p class="ml-16 mt-4">並べ替え：</p>
+                <select class="mt-3 px-2 text-sm text-center font-robotoFlex text-gray-900 bg-gray-50 rounded-sm border border-gray-300">
+                  <option>人気順</option>
+                  <option>新着順</option>
+                </select>
+              </div>
+              <div class="flex">
+                <p class="ml-10 mt-4">表示件数：</p>
+                <select class="mt-3 px-2 text-sm text-center font-robotoFlex text-gray-900 bg-gray-50 rounded-sm border border-gray-300">
+                  <option>10件</option>
+                  <option>20件</option>
+                  <option>40件</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -322,6 +328,27 @@
             </a>
           </div>
         </div>
+      </div>
+      <div class="flex justify-center text-xs mt-32">
+        <nav aria-label="Page navigation example">
+          <ul class="inline-flex -space-x-px">
+            <li>
+              <a href="#" class="px-2 py-4 bg-white border border-qa-blue">1</a>
+            </li>
+            <li>
+              <a href="#" class="px-2 py-4 bg-white border border-qa-blue">2</a>
+            </li>
+            <li>
+              <a href="#" class="px-2 py-4 bg-white border border-qa-blue">3</a>
+            </li>
+            <li>
+              <a href="#" class="px-2 py-4 bg-white border border-qa-blue">4</a>
+            </li>
+            <li>
+              <a href="#" class="px-2 py-4 bg-white border border-qa-blue">5</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </body>

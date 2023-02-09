@@ -10,7 +10,7 @@
     @vite(['resources/css/dist.css'])
     <!-- 指定フォントですtailwind.config.jsに記載してます -->
     
-    <title>Document</title>
+    <title>TOP</title>
   </head>
   
   <body>

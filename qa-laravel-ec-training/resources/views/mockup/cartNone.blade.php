@@ -10,7 +10,7 @@
     @vite(['resources/css/dist.css'])
     <!-- 指定フォントですtailwind.config.jsに記載してます -->
     
-    <title>Document</title>
+    <title>カート内容品空</title>
   </head>
   <body>
     <div class="mb-80">
@@ -31,11 +31,11 @@
                   <p class="text-xl text-qa-red ml-2 mt-3">カート内に商品が存在しません。</p>
                 </div>
                 <div class="pl-5 pt-2.5">
-                  <p class="">以下をお試しください</p>
+                  <p class="">以下をお試しください。</p>
                   <ul class="list-none pb-5">
-                    <li>①商品を検索し、該当の商品を選択する </li>
-                    <li>②商品数を選択し、カートに入れるボタンをクリックする </li>
-                    <li>③カートを見るボタンをクリックする</li>
+                    <li>①商品を検索し、該当の商品を選択する。</li>
+                    <li>②商品数を選択し、カートに入れるボタンをクリックする。</li>
+                    <li>③カートを見るボタンをクリックする。</li>
                   </ul>
                 </div>
               </div>

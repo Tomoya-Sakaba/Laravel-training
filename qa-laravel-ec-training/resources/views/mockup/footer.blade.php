@@ -10,7 +10,7 @@
     @vite(['resources/css/dist.css'])
     <!-- 指定フォントですtailwind.config.jsに記載してます -->
     
-    <title>Document</title>
+    <title>フッター</title>
   </head>
   <body>
     <div class="mx-16 bg-qa-gray">

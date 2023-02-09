@@ -10,7 +10,7 @@
     @vite(['resources/css/dist.css'])
     <!-- 指定フォントですtailwind.config.jsに記載してます -->
     
-    <title>Document</title>
+    <title>カート内容品</title>
   </head>
   <body>
     <div class="mb-36">
@@ -235,7 +235,7 @@
                     <p class="">〇〇県〇〇市〇〇　〇ー〇ー〇</p>
                   </div>
                   <div class="mt-4">
-                    <button type="button" class="text-2xl text-center text-white font-bold bg-qa-red py-5 w-full rounded-md">購入する</button>
+                    <button type="button" class="text-2xl text-center text-white font-bold bg-qa-red2 py-5 w-full rounded-md">購入する</button>
                   </div>
                   <a href="#">
                     <div class="mt-4 bg-qa-green py-2 rounded-md">

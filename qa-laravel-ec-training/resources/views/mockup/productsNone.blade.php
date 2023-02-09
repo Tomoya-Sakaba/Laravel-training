@@ -10,7 +10,7 @@
     @vite(['resources/css/dist.css'])
     <!-- 指定フォントですtailwind.config.jsに記載してます -->
     
-    <title>Document</title>
+    <title>商品検索空</title>
   </head>
 
   <body>
@@ -31,7 +31,7 @@
           <p class="text-xl text-qa-red mt-3">「〇〇〇」に対する検索結果はありませんでした。</p>
         </div>
         <div class="pl-5 pt-2.5">
-          <p class="">以下をお試しください</p>
+          <p class="">以下をお試しください。</p>
           <ul class="list-disc ml-4 pb-5">
             <li>同じ意味の別のキーワードを試してみる。（例：カバン→バッグ）</li>
             <li>言葉の区切り方を変えてみる。（大きい冷蔵庫　→ 大きい　冷蔵庫）</li>

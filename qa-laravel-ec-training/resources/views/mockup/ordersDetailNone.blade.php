@@ -10,7 +10,7 @@
     @vite(['resources/css/dist.css'])
     <!-- 指定フォントですtailwind.config.jsに記載してます -->
     
-    <title>Document</title>
+    <title>注文の詳細</title>
   </head>
 
   <body>
@@ -34,7 +34,7 @@
             <p class="text-xl text-qa-red ml-3 mt-3">該当する注文はありませんでした。</p>
           </div>
           <div class="pl-5 pt-2.5">
-            <p class="">以下をお試しください</p>
+            <p class="">以下をお試しください。</p>
             <ul class="list-disc ml-4 pb-5">
               <li>入力間違いがないか確認する。</li>
               <li>注文履歴に戻り、お探しの履歴を確認する。</li>

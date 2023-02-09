@@ -1525,21 +1525,18 @@ h1 {
   margin: 20px;
   font-weight: bold;
 }
-
 .info {
   margin: 10px 300px;
   padding: 10px 60px;
 }
-
 .info ul {
   margin-bottom: 100px;
 }
-
 .info li {
   margin-top: 40px;
   margin-bottom: 40px;
+  font-weight: bold;
 }
-
 .btn-wrapper a {
   background-color: #2f6eba;
   color: white;
@@ -1548,8 +1545,8 @@ h1 {
   text-align: center;
   border-radius: 7px;
 }
-
 .btn-blue {
   display: block;
   width: 170px;
+  font-weight: bold;
 }

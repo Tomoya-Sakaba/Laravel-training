@@ -10,12 +10,12 @@
     @vite(['resources/css/dist.css'])
     <!-- 指定フォントですtailwind.config.jsに記載してます -->
     
-    <title>Document</title>
+    <title>会員情報修正</title>
   </head>
 
   <body>
     <div class="flex mx-6 mt-8">
-      <p class="text-2xl mt-3 ml-7 font-inter text-qa-blue font-bold">ユーザー情報修正</p>
+      <p class="text-2xl mt-3 ml-7 font-inter text-qa-blue font-bold">会員情報修正</p>
     </div>
     <div>
       <div class="border-t-2 mt-2 border-blue-300 w-11/12 ml-12">　</div>

@@ -10,7 +10,7 @@
     @vite(['resources/css/dist.css'])
     <!-- 指定フォントですtailwind.config.jsに記載してます -->
     
-    <title>Document</title>
+    <title>注文履歴空</title>
   </head>
 
   <body>
@@ -29,7 +29,7 @@
             <p class="text-xl text-qa-red ml-3 mt-3">注文履歴が存在しません。</p>
           </div>
           <div class="pl-5 pt-2.5">
-            <p class="">以下をお試しください</p>
+            <p class="">以下をお試しください。</p>
             <ul class="list-disc ml-4 pb-10">
               <li>複数のアカウントがある方は、異なったアカウントでログインしてみる。</li>
               <li>注文してから反映されるまで時間がかかることがあります。<br>少し時間置いてから再度お試しください。</li>

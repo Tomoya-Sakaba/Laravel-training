@@ -10,7 +10,7 @@
     @vite(['resources/css/dist.css'])
     <!-- 指定フォントですtailwind.config.jsに記載してます -->
     
-    <title>Document</title>
+    <title>注文履歴</title>
   </head>
   <body>
     <div class="mb-24">
@@ -269,9 +269,6 @@
             </li>
             <li>
               <a href="#" class="px-2 py-4 bg-white border border-qa-blue">5</a>
-            </li>
-            <li>
-              <a href="#" class="px-2 py-4  bg-qa-darkGray2 border border-l-qa-blue border-t-qa-darkGray2 border-b-qa-darkGray2 border-r-qa-darkGray2">...</a>
             </li>
           </ul>
         </nav>

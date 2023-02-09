@@ -10,11 +10,11 @@
     @vite(['resources/css/dist.css'])
     <!-- 指定フォントですtailwind.config.jsに記載してます -->
     
-    <title>Document</title>
+    <title>商品詳細</title>
   </head>
   <body>
     <div class="mb-20">
-      <p class="text-sm mt-14 ml-5 font-inter">ホーム　＞　文房具・事務用品　＞　「〇〇」の製品詳細</p>
+      <p class="text-sm mt-14 ml-5 font-inter">ホーム　＞　「〇〇」の商品詳細</p>
       <div class="flex mx-6 mt-20">
         <p class="text-xl mt-3 ml-7 font-inter text-qa-blue font-bold">商品名が入ります</p>
       </div>
@@ -54,10 +54,10 @@
                 <div class="border-2 w-64">
                   <div class="m-6">
                     <div class="flex mt-3">
-                      <p class="mt-2 font-robotoFlex">注文数</p>
+                      <p class="mt-1.5 font-bold font-robotoFlex">注文数</p>
                       <div class="ml-4">
                         <form>
-                          <select class="py-2 px-5 w-full text-sm text-center font-robotoFlex text-gray-900 bg-gray-50 rounded-sm border border-gray-300">
+                          <select class="py-2 px-3 w-full text-sm text-center font-robotoFlex text-gray-900 rounded-sm border border-gray-300">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -76,7 +76,7 @@
                       <img src="/images/cartBlack.png" class="w-7 object-contain mt-2 ml-4 mr-4" />
                       <p class="text-lg mt-2 mr-4">カートに入れる</p>
                     </button>
-                    <button type="button" class="bg-qa-red pb-2 mt-4 rounded-md inline-flex">
+                    <button type="button" class="bg-qa-red2 pb-2 mt-4 rounded-md inline-flex">
                       <img src="/images/cart.png" class="w-7 object-contain mt-2 ml-4 mr-4" />
                       <p class="text-lg mt-2 mr-4 text-white">今すぐ購入する</p>
                     </button>
