@@ -15,7 +15,7 @@
 </head>
 
   <body>
-    <div class="flex flex-col border border-qa-blue mx-20 mt-20">
+    <div class="flex flex-col border border-qa-blue mx-20 my-20">
       <div class="my-7">
         <p class="text-xl text-center text-qa-blue font-inter font-bold underline">ご購入が完了しました</p>
       </div>
