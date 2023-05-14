@@ -12,7 +12,9 @@
     <title>Document</title>
   </head>
   <body>
-    <h1 class="absolute inset-y-0 left-0 flex items-center ">Laravel</h1>
+    <button type="button" class="cursor-pointer m-5 p-3 shadow-md rounded-md font-semibold text-white text-base bg-blue-500 hover:bg-blue-700 ring-blue-200 ring-2">
+      Laravel
+    </button>
   </body>
 </html>
     

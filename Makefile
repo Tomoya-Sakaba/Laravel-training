@@ -39,3 +39,9 @@ seed:
 dev:
 	docker-compose exec web npm install
 	docker-compose exec web npm run dev
+
+clear:
+	docker-compose exec web php artisan cache:clear
+	docker-compose exec web php artisan config:clear
+	docker-compose exec web php artisan route:clear
+	docker-compose exec web php artisan view:clear
