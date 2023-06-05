@@ -7,12 +7,13 @@
 
     <!-- CSSのリンクはdist.cssのみ -->
     @vite(['resources/css/app.css'])
+    @vite(['resources/css/dist.css'])
     <!-- 指定フォントですtailwind.config.jsに記載してます -->
     
     <title>Document</title>
   </head>
   <body>
-    <button type="button" class="cursor-pointer m-5 p-3 shadow-md rounded-md font-semibold text-white text-base bg-blue-500 hover:bg-blue-700 ring-blue-200 ring-2">
+    <button class="mt-3 ml-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
       Laravel
     </button>
   </body>
