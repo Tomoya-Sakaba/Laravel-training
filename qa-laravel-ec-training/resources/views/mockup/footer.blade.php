@@ -10,12 +10,18 @@
     @vite(['resources/css/dist.css'])
     <!-- 指定フォントですtailwind.config.jsに記載してます -->
     
-    <title>Document</title>
+    <title>フッター</title>
   </head>
   <body>
-    <button class="mt-3 ml-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-      Laravel
-    </button>
+    <div class="mx-16 bg-qa-gray">
+      <div class="flex justify-center">
+        <div class="mt-6">
+          <p class="text-2xl text-center font-bold text-qa-blue">〇〇〇〇〇〇〇〇</p>
+          <p class="font-robotoFlex font-semibold">
+            © 2023 QuestAcademia, All rights reserved
+          </p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
-    
