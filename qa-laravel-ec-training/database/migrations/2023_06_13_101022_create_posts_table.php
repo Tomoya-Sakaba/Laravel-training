@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->bigIncrements('id');
-			$table->string('title', 20);
-			$table->string('body');
-            $table->timestamps();
+			$table->bigIncrements('id');
+			$table->string('title', 20)->comment('タイトル');
+			$table->string('body')->comment('本文');
+			$table->timestamps();
         });
     }
 
