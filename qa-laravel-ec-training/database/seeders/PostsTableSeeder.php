@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use DateTime;
 
 class PostsTableSeeder extends Seeder
 {
@@ -17,15 +18,21 @@ class PostsTableSeeder extends Seeder
     {
         DB::table('posts')->insert([
 			'title' => 'sample1',
-			'body' => '本文です'
+			'body' => '本文です',
+			'created_at' => new DateTime(),
+			'updated_at' => new DateTime(),
 		]);
 		DB::table('posts')->insert([
 			'title' => 'sample2',
-			'body' => '練習です'
+			'body' => '練習です',
+			'created_at' => new DateTime(),
+			'updated_at' => new DateTime(),
 		]);
 		DB::table('posts')->insert([
 			'title' => 'sample3',
-			'body' => '追加課題です'
+			'body' => '追加課題です',
+			'created_at' => new DateTime(),
+			'updated_at' => new DateTime(),
 		]);
     }
 }
