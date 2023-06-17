@@ -18,5 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/posts', [PostsController::class, 'index']);
+Route::get('/posts', [PostsController::class, 'index'])->name('post');
 Route::get('/posts/{id}', [PostsController::class, 'show'])->name('post.show');

@@ -23,5 +23,8 @@
             </div>
         </div>
     </div>
+	<div class="container">
+		<a class="btn btn-secondary" href="{{ route('post') }}">戻る</a>
+	</div>
 
 @endsection
