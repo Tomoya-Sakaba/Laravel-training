@@ -23,4 +23,22 @@ class PostsController extends Controller
 			'post' => $post
 		]);
 	}
+
+	public function create()
+	{
+		return view('create');
+	}
+
+	public function store(Request $request)
+	{
+		$this->validate($request, [
+			'title' => 'required|max:20',
+			'body' => 'required'
+		]);
+
+		//フォームに入力されたものをPostテーブルに入れ込む
+		Post::create($request->all());
+
+		return redirect()->route('post');
+	}
 }

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
 			$table->bigIncrements('id');
 			$table->string('title', 20)->comment('タイトル');
-			$table->string('body')->comment('本文');
+			$table->text('body')->comment('本文');
 			$table->timestamps();
         });
     }
