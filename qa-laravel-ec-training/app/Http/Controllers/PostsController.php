@@ -15,4 +15,12 @@ class PostsController extends Controller
 			'posts' => $posts,
 		]);
 	}
+
+	public function show($id)
+	{
+		$post = Post::find($id);
+		return view('show', [
+			'post' => $post
+		]);
+	}
 }
