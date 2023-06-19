@@ -5,7 +5,7 @@
 	<div class="container">
         <div class="container mt-4">
             <div class="text-right">
-                <a class="btn btn-primary" href="">編集する</a>
+                <a class="btn btn-primary" href="{{ route('post.edit', $post->id) }}">編集する</a>
                 <a class="btn btn-danger" href="">削除する</a>
             </div>
         </div>
