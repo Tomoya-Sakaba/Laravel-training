@@ -49,4 +49,17 @@ class PostsController extends Controller
 			'post' => $post
 		]);
 	}
+
+	public function update(Request $request)
+	{
+		$this->validate($request, [
+			'title' => 'required|max:20',
+			'body' => 'required'
+		]);
+		Post::find($request->id)->update([
+			'title' => $request->title,
+			'body' => $request->body
+		]);
+		return redirect()->route('post');
+	}
 }
