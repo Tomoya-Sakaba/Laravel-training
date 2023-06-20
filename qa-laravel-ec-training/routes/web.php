@@ -23,3 +23,4 @@ Route::get('/posts/create', [PostsController::class, 'create'])->name('post.crea
 Route::post('/posts', [PostsController::class, 'store'])->name('post.store');
 
 Route::get('/posts/{id}', [PostsController::class, 'show'])->name('post.show');
+Route::get('/posts/{id}/edit', [PostsController::class, 'edit'])->name('post.edit');
