@@ -50,13 +50,13 @@ class PostsController extends Controller
 		]);
 	}
 
-	public function update(Request $request)
+	public function update(Request $request, $id)
 	{
 		$this->validate($request, [
 			'title' => 'required|max:20',
 			'body' => 'required'
 		]);
-		Post::find($request->id)->update([
+		Post::find($id)->update([
 			'title' => $request->title,
 			'body' => $request->body
 		]);
