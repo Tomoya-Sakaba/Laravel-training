@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
 
 class PostsController extends Controller
 {
@@ -37,7 +38,11 @@ class PostsController extends Controller
 		]);
 
 		//フォームに入力されたものをPostテーブルに入れ込む
-		Post::create($request->all());
+		//Post::create($request->all());
+		$request->user()->posts()->create([
+            'title' => $request->title,
+            'body' => $request->body,
+        ]);
 
 		return redirect()->route('post');
 	}

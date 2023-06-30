@@ -21,18 +21,23 @@ class PostsTableSeeder extends Seeder
 			'body' => '本文です',
 			'created_at' => new DateTime(),
 			'updated_at' => new DateTime(),
+			'user_id' => 1
 		]);
 		DB::table('posts')->insert([
 			'title' => 'sample2',
 			'body' => '練習です',
 			'created_at' => new DateTime(),
 			'updated_at' => new DateTime(),
+			'user_id' => 1
+
 		]);
 		DB::table('posts')->insert([
 			'title' => 'sample3',
 			'body' => '追加課題です',
 			'created_at' => new DateTime(),
 			'updated_at' => new DateTime(),
+			'user_id' => 1
+
 		]);
     }
 }
