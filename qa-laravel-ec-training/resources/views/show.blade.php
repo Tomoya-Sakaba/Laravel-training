@@ -5,9 +5,10 @@
 	<div class="container">
         <div class="container mt-4">
             <div class="text-end">
-                <a class="btn btn-primary" href="{{ route('post.edit', $post->id) }}">編集する</a>
+                <a class="btn btn-primary" href="{{ route('posts.edit', $post->id) }}">編集する</a>
 				<div class="d-inline-flex">
-					{!! Form::open(['route' => ['post.delete', $post->id], 'method'=>'POST']) !!}
+					{!! Form::open(['route' => ['posts.destroy', $post->id], 'method'=>'POST']) !!}
+						@method('DELETE')
 						{!! Form::submit('削除する',['class'=>'btn btn-danger']) !!}
 					{!! Form::close() !!}
 				</div>
