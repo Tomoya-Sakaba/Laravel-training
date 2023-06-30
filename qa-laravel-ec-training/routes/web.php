@@ -34,10 +34,10 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::post('/posts', [PostsController::class, 'store'])->name('post.store');
 
 	Route::get('/posts/{id}', [PostsController::class, 'show'])->name('post.show');
-	Route::post('/posts/{id}', [PostsController::class, 'update'])->name('post.update');
-	Route::post('/posts/{id}', [PostsController::class, 'destroy'])->name('post.delete');
 	Route::get('/posts/{id}/edit', [PostsController::class, 'edit'])->name('post.edit');
-	
+	Route::post('/posts/{id}/update', [PostsController::class, 'update'])->name('post.update');
+	Route::post('/posts/{id}/derete', [PostsController::class, 'destroy'])->name('post.delete');
+
 	Route::get('/logout', [UserController::class, 'getLogout'])->name('logout');
 });
 
