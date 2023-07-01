@@ -7,6 +7,7 @@ use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
@@ -29,7 +30,12 @@ class PostsController extends Controller
 
 	public function create()
 	{
-		return view('create');
+		$user = auth::user();
+		$posts = $user->posts()->orderBy('id', 'desc')->get();
+		return view('create', [
+			"user" => $user,
+			"posts" => $posts
+		]);
 	}
 
 	public function store(PostRequest $request)

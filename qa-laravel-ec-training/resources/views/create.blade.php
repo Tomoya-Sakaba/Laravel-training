@@ -19,5 +19,7 @@
                 </div>
             {!!Form::close()!!}
         </div>
+		<h2 class="mt-5">あなたの投稿</h2>
+		@include('index', ['posts' => $posts])
     </div>
 @endsection
