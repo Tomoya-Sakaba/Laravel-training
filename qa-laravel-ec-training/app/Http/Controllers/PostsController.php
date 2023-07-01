@@ -14,7 +14,7 @@ class PostsController extends Controller
 	{
 		//$posts = Post::all() -> sortByDesc('id');
 		$posts = Post::orderBy('id', 'desc')->get();
-		return view('posts', [
+		return view('home', [
 			'posts' => $posts,
 		]);
 	}
