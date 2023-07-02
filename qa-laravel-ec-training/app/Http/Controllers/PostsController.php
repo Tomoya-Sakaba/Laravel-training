@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use App\Models\User;
 
@@ -30,15 +31,9 @@ class PostsController extends Controller
 		return view('create');
 	}
 
-	public function store(Request $request)
+	public function store(PostRequest $request)
 	{
-		$this->validate($request, [
-			'title' => 'required|max:20',
-			'body' => 'required'
-		]);
-
 		//フォームに入力されたものをPostテーブルに入れ込む
-		//Post::create($request->all());
 		$request->user()->posts()->create([
             'title' => $request->title,
             'body' => $request->body,
@@ -55,12 +50,8 @@ class PostsController extends Controller
 		]);
 	}
 
-	public function update(Request $request, $id)
+	public function update(PostRequest $request, $id)
 	{
-		$this->validate($request, [
-			'title' => 'required|max:20',
-			'body' => 'required'
-		]);
 		Post::find($id)->update([
 			'title' => $request->title,
 			'body' => $request->body

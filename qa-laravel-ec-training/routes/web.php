@@ -29,15 +29,8 @@ Route::group(['middleware' => 'guest'], function(){
 });
 
 Route::group(['middleware' => 'auth'], function() {
-	Route::get('/posts', [PostsController::class, 'index'])->name('post');
-	Route::get('/posts/create', [PostsController::class, 'create'])->name('post.create');
-	Route::post('/posts', [PostsController::class, 'store'])->name('post.store');
-
-	Route::get('/posts/{id}', [PostsController::class, 'show'])->name('post.show');
-	Route::get('/posts/{id}/edit', [PostsController::class, 'edit'])->name('post.edit');
-	Route::post('/posts/{id}/update', [PostsController::class, 'update'])->name('post.update');
-	Route::post('/posts/{id}/derete', [PostsController::class, 'destroy'])->name('post.delete');
-
+	Route::resource('posts', PostsController::class);
+	Route::get('/', [PostsController::class, 'index'])->name('post');
 	Route::get('/logout', [UserController::class, 'getLogout'])->name('logout');
 });
 
