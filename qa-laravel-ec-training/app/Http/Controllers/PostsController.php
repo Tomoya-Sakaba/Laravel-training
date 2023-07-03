@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
 {
@@ -33,11 +34,13 @@ class PostsController extends Controller
 
 	public function store(PostRequest $request)
 	{
-		//フォームに入力されたものをPostテーブルに入れ込む
-		$request->user()->posts()->create([
-            'title' => $request->title,
-            'body' => $request->body,
-        ]);
+		DB::transaction(function () use ($request) {
+			//フォームに入力されたものをPostテーブルに入れ込む
+			$request->user()->posts()->create([
+				'title' => $request->title,
+				'body' => $request->body,
+			]);
+		});
 
 		return redirect()->route('post');
 	}
@@ -52,16 +55,20 @@ class PostsController extends Controller
 
 	public function update(PostRequest $request, $id)
 	{
-		Post::find($id)->update([
-			'title' => $request->title,
-			'body' => $request->body
-		]);
+		DB::transaction(function () use ($request, $id) {
+			Post::find($id)->update([
+				'title' => $request->title,
+				'body' => $request->body
+			]);
+		});
 		return redirect()->route('post');
 	}
 
 	public function destroy($id)
 	{
-		Post::find($id)->delete();
+		DB::transaction(function () use ($id) {
+			Post::find($id)->delete();
+		});
 		return redirect()->route('post');
 	}
 }
