@@ -56,4 +56,16 @@ class UserController extends Controller
 		Auth::logout();
 		return redirect()->route('login');
 	}
+
+	public function show($id)
+	{
+		$user = User::find($id);
+		$posts = $user->posts()->orderBy('id', 'desc')->get();
+		$data=[
+            'user' => $user,
+            'posts' => $posts,
+        ];
+        $data += $this->counts($user);
+		return view('mypage', $data);
+	}
 }
