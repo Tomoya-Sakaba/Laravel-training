@@ -73,7 +73,10 @@ class PostsController extends Controller
 	public function destroy($id)
 	{
 		DB::transaction(function () use ($id) {
-			Post::find($id)->delete();
+			$post = Post::find($id);
+			if (Auth::id() == $post->user_id) {
+				$post->delete();
+			}
 		});
 		return redirect()->route('post');
 	}
