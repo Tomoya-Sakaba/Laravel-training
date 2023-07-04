@@ -7,6 +7,7 @@ use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
@@ -14,7 +15,7 @@ class PostsController extends Controller
 	{
 		//$posts = Post::all() -> sortByDesc('id');
 		$posts = Post::orderBy('id', 'desc')->get();
-		return view('posts', [
+		return view('home', [
 			'posts' => $posts,
 		]);
 	}
@@ -29,7 +30,12 @@ class PostsController extends Controller
 
 	public function create()
 	{
-		return view('create');
+		$user = auth::user();
+		$posts = $user->posts()->orderBy('id', 'desc')->get();
+		return view('create', [
+			"user" => $user,
+			"posts" => $posts
+		]);
 	}
 
 	public function store(PostRequest $request)
@@ -67,7 +73,10 @@ class PostsController extends Controller
 	public function destroy($id)
 	{
 		DB::transaction(function () use ($id) {
-			Post::find($id)->delete();
+			$post = Post::find($id);
+			if (Auth::id() == $post->user_id) {
+				$post->delete();
+			}
 		});
 		return redirect()->route('post');
 	}
