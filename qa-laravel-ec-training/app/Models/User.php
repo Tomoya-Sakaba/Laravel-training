@@ -49,12 +49,12 @@ class User extends Authenticatable
 
 	public function followings()
 	{
-		return $this->belongToMany(User::class, 'user_follow', 'user_id', 'follow_id')->whitTimestamps();
+		return $this->belongsToMany(User::class, 'user_follow', 'user_id', 'follow_id')->withTimestamps();
 	}
 
 	public function followers()
 	{
-		return $this->belongToMany(User::class, 'user_follow', 'follow_id', 'user_id')->whitTimestamps();
+		return $this->belongsToMany(User::class, 'user_follow', 'follow_id', 'user_id')->withTimestamps();
 	}
 
 	public function is_following($userId)
@@ -81,7 +81,7 @@ class User extends Authenticatable
 		//1つ目の変数があって2つ目の変数がない時実行
 		//すでにフォロー済み、かつフォロー相手がユーザ自身ではない場合、フォローを外す
 		if ($existing && !$myself) {
-			$this->following()->detach($userId);
+			$this->followings()->detach($userId);
 		}
 	}
 
