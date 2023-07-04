@@ -2,7 +2,10 @@
 	<a class="btn btn-primary" href="{{ route('posts.create') }}">投稿の新規作成</a>
 </div>
 <div class="container my-4">
-	@foreach ($posts as $post)
+	@foreach ($users as $user)
+		@php
+			$post = $user->posts
+		@endphp
 		<div class="card mb-4">
 			<div class="card-header">
 				<h2>{{ $post->title }}</h2>
@@ -15,5 +18,6 @@
 				<span>投稿日時:{{ $post->created_at->format('Y-m-d') }}</span>
 			</div>
 		</div>
+		@include('follow.follow_button', ['user' => $user])
 	@endforeach
 </div>

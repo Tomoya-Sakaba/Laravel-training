@@ -57,6 +57,14 @@ class UserController extends Controller
 		return redirect()->route('login');
 	}
 
+	public function index()
+	{
+		$users = User::orderBy('id', 'desc')->get();
+		return view('home', [
+			'users' => $users,
+		]);
+	}
+
 	public function show($id)
 	{
 		$user = User::find($id);
