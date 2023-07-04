@@ -7,5 +7,5 @@
 			</div>
 		</div>
 	</div>
-	@include('posts',['users' => $users])
+	@include('posts',['posts' => $posts])
 @endsection

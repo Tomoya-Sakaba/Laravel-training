@@ -2,10 +2,11 @@
 	<a class="btn btn-primary" href="{{ route('posts.create') }}">投稿の新規作成</a>
 </div>
 <div class="container my-4">
-	@foreach ($users as $user)
+	@foreach ($posts as $post)
 		@php
-			$post = $user->posts
+			$user = App\Models\User::find($post->user_id)
 		@endphp
+		{{ $user->name }}
 		<div class="card mb-4">
 			<div class="card-header">
 				<h2>{{ $post->title }}</h2>
