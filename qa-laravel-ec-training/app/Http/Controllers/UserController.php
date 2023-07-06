@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -75,5 +76,29 @@ class UserController extends Controller
         ];
         $data += $this->counts($user);
 		return view('mypage', $data);
+	}
+
+	public function followings($id)
+	{
+		$user = User::find($id);
+		$followings = $user->followings()->get();
+		$data = [
+			'user' => $user,
+			'users' => $followings,
+		];
+		$data += $this->counts($user);
+		return view('user.followings', $data);
+	}
+
+	public function followers($id)
+	{
+		$user = User::find($id);
+		$followers = $user->followers()->get();
+		$data = [
+			'user' => $user,
+			'users' => $followers,
+		];
+		$data += $this->counts($user);
+		return view('user.followers', $data);
 	}
 }
