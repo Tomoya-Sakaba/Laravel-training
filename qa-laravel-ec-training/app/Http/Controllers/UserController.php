@@ -80,11 +80,13 @@ class UserController extends Controller
 
 	public function followings($id)
 	{
+		$posts = Post::orderBy('id', 'desc')->get();
 		$user = User::find($id);
 		$followings = $user->followings()->get();
 		$data = [
 			'user' => $user,
-			'users' => $followings,
+			'posts' => $posts,
+			'follows' => $followings,
 		];
 		$data += $this->counts($user);
 		return view('user.followings', $data);
@@ -92,11 +94,14 @@ class UserController extends Controller
 
 	public function followers($id)
 	{
+		$posts = Post::orderBy('id', 'desc')->get();
 		$user = User::find($id);
 		$followers = $user->followers()->get();
+		
 		$data = [
 			'user' => $user,
-			'users' => $followers,
+			'posts' => $posts,
+			'follows' => $followers,
 		];
 		$data += $this->counts($user);
 		return view('user.followers', $data);

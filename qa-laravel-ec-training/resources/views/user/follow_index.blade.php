@@ -1,9 +1,10 @@
 <div class="container my-4">
-		@foreach ($users as $user)
-			@php
-				$posts = $user->posts()->orderBy('id', 'desc')->get();
-			@endphp
-			@foreach ($posts as $post)
+	@foreach ($posts as $post)
+		@php
+			$user = App\Models\User::find($post->user_id);
+		@endphp
+		@foreach($follows as $follow)
+			@if ($user->id == $follow->id)
 				<div class="mb-1">
 					<a href="{{ route('mypage', ['id' => $user->id]) }}" class="h2">＠{{ $user->name }}</a>
 				</div>
@@ -19,6 +20,7 @@
 						<span>投稿日時:{{ $post->created_at->format('Y-m-d') }}</span>
 					</div>
 				</div>
-			@endforeach
+			@endif
 		@endforeach
+	@endforeach
 </div>
