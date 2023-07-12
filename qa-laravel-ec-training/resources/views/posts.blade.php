@@ -2,6 +2,15 @@
 	<a class="btn btn-primary" href="{{ route('posts.create') }}">投稿の新規作成</a>
 </div>
 <div class="container my-4">
+
+	<ul class="nav nav-tabs nav-justified mb-2">
+		<li class="nav-item">
+			<a class="nav-link active" aria-current="page" href="#">全ての投稿</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#">フォロー中</a>
+		</li>
+	</ul>
 	
 	@foreach ($posts as $post)
 		@php

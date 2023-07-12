@@ -1,26 +1,9 @@
-<div class="container my-4">
-	@foreach ($posts as $post)
-		@php
-			$user = App\Models\User::find($post->user_id);
-		@endphp
-		@foreach($follows as $follow)
-			@if ($user->id == $follow->id)
-				<div class="mb-1">
-					<a href="{{ route('mypage', ['id' => $user->id]) }}" class="h2">＠{{ $user->name }}</a>
-				</div>
-				<div class="card mb-4">
-					<div class="card-header">
-						<h2>{{ $post->title }}</h2>
-					</div>
-					<div class="card-body">
-						<p class="card-text">{{ $post->body }}</p>
-						<a class="card-link" href="{{ route('posts.show', ['post' => $post->id]) }}">詳細をみる</a>
-					</div>
-					<div class="card-footer">
-						<span>投稿日時:{{ $post->created_at->format('Y-m-d') }}</span>
-					</div>
-				</div>
-			@endif
-		@endforeach
+<div class="my-4">
+	@foreach($follows as $follow)
+		<div class="card mb-2">
+			<div class="card-header">
+				<a href="{{ route('mypage', ['id' => $user->id]) }}" class="h2">＠{{ $follow->name }}</a>
+			</div>
+		</div>
 	@endforeach
 </div>

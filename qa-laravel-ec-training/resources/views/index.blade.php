@@ -1,4 +1,4 @@
-<div class="container my-4">
+<div class="my-4">
 	@if(count($posts) == 0)
 		投稿はありません
 	@else	
