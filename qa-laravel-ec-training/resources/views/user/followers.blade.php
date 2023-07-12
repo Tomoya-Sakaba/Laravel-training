@@ -18,7 +18,7 @@
 		</li>
 	</ul>
 
-	@include('user.follow_index', ['follows' => $follows])
+	@include('user.follow_users', ['follows' => $follows])
 
 	<a class="btn btn-secondary" href="{{ route('mypage', ['id' => $user->id]) }}">戻る</a>
 

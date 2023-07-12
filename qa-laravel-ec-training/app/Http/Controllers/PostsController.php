@@ -20,6 +20,20 @@ class PostsController extends Controller
 		]);
 	}
 
+	public function followIndex($id)
+	{
+		$posts = Post::orderBy('id', 'desc')->get();
+		$user = User::find($id);
+		$followings = $user->followings()->get();
+
+		$data = [
+			'user' => $user,
+			'posts' => $posts,
+			'followings' => $followings,
+		];
+		return view('follow_index', $data);
+	}
+
 	public function show($id)
 	{
 		$post = Post::find($id);

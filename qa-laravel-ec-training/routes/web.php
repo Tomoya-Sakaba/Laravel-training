@@ -33,6 +33,7 @@ Route::group(['middleware' => 'guest'], function(){
 Route::group(['middleware' => 'auth'], function() {
 	Route::resource('posts', PostsController::class);
 	Route::get('/', [PostsController::class, 'index'])->name('post');
+	Route::get('/follow/{id}', [PostsController::class, 'followIndex'])->name('followIndex');
 	Route::get('/mypage/{id}', [UserController::class, 'show'])->name('mypage');
 
 	Route::get('/users/{id}/followings', [UserController::class, 'followings'])->name('followings');

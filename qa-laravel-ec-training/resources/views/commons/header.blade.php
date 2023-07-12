@@ -10,6 +10,7 @@
 					@auth
 						<li class="nav-item">{!! link_to_route('logout', 'ログアウト', [], ['class' => 'nav-link']) !!}</li>
 						<li class="nav-item">{!! link_to_route('mypage', 'マイページ', ['id'=>Auth::id()], ['class' => 'nav-link']) !!}</li>
+						<li class="nav-item">{!! link_to_route('posts.create', '投稿の新規作成', [], ['class' => 'nav-link']) !!}</li>
 					@else
 						<li class="nav-item">{!! link_to_route('signup', '新規ユーザ登録', [], ['class' => 'nav-link']) !!}</li>
 						<li class="nav-item">{!! link_to_route('login', 'ログイン', [], ['class' => 'nav-link']) !!}</li>
