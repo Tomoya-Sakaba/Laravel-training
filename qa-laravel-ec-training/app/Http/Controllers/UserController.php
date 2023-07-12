@@ -83,6 +83,12 @@ class UserController extends Controller
 		$posts = Post::orderBy('id', 'desc')->get();
 		$user = User::find($id);
 		$followings = $user->followings()->get();
+		foreach($posts as $post) {
+			foreach($followings as $following) {
+				if($post->id == $following->id) {
+					$posts = ... ;
+		}}};
+
 		$data = [
 			'user' => $user,
 			'posts' => $posts,

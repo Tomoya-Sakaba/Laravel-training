@@ -4,6 +4,5 @@
 
 	@include('user.tabs', ['user' => $user])
 
-	@include('index', ['posts' => $posts])
 
 @endsection

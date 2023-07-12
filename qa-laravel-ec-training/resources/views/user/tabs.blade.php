@@ -23,9 +23,9 @@
 		@include('index', ['posts' => $posts])
 	</div>
 	<div id="user/*/followers" class="tab-pane" role="tabpanel" aria-labelledby="tab2">
-		@include('user.follow_index', ['posts' => $posts])
+		@include('posts', ['posts' => $posts])
 	</div>
 	<div id="user/*/followings" class="tab-pane" role="tabpanel" aria-labelledby="tab3">
-		@include('user.follow_index', ['posts' => $posts])
+		@include('posts', ['posts' => $posts])
 	</div>
 </div>
