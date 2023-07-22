@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -15,7 +16,7 @@ class UserController extends Controller
 
 	public function postSignup(request $request)
 	{
-		$this->validate($request, [
+		$newUser = $this->validate($request, [
 			'name' => 'required',
 			'email' => 'email|required|unique:users',
 			'password' => 'required|min:8|confirmed'
@@ -29,8 +30,12 @@ class UserController extends Controller
 		]);
 
 		$user -> save();
+		//dd($user);
+		if (Auth::attempt($newUser)){
+			return redirect()->route('post');
+		};
 
-		return redirect()->route('post');
+		//return redirect()->route('post');
 	}
 
 	public function getLogin()
@@ -40,14 +45,14 @@ class UserController extends Controller
 
 	public function postLogin(request $request)
 	{
-		$this->validate($request, [
+		$user = $this->validate($request, [
 			'email' => 'email|required',
 			'password' => 'required|min:8'
 		]);
 
-		if (Auth::attempt(['email' => $request -> input('email'), 'password' => $request -> input('password'),])){
+		if (Auth::attempt($user)){
 			return redirect()->route('post');
-		}
+		};
 
 		return redirect()->back();
 	}
@@ -55,6 +60,14 @@ class UserController extends Controller
 	public function getLogout(){
 		Auth::logout();
 		return redirect()->route('login');
+	}
+
+	public function index()
+	{
+		$users = User::orderBy('id', 'desc')->get();
+		return view('home', [
+			'users' => $users,
+		]);
 	}
 
 	public function show($id)
@@ -67,5 +80,31 @@ class UserController extends Controller
         ];
         $data += $this->counts($user);
 		return view('mypage', $data);
+	}
+
+	public function followings($id)
+	{
+		$user = User::find($id);
+		$followings = $user->followings()->get();
+		$data = [
+			'user' => $user,
+			'follows' => $followings,
+		];
+		// $data = $data + $this->counts($user);
+		$data += $this->counts($user);
+		return view('user.followings', $data);
+	}
+
+	public function followers($id)
+	{
+		$user = User::find($id);
+		$followers = $user->followers()->get();
+		
+		$data = [
+			'user' => $user,
+			'follows' => $followers,
+		];
+		$data += $this->counts($user);
+		return view('user.followers', $data);
 	}
 }

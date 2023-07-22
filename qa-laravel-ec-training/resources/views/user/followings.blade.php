@@ -1,7 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
-
+	
 	<h1>{{ $user->name }}</h1>
 	
 	@include('follow.follow_button', ['user' => $user])
@@ -19,6 +18,8 @@
 		</li>
 	</ul>
 
-	@include('index', ['posts' => $posts])
+	@include('user.follow_users', ['follows' => $follows])
+
+	<a class="btn btn-secondary" href="{{ route('mypage', ['id' => $user->id]) }}">戻る</a>
 
 @endsection
