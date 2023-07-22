@@ -2,7 +2,7 @@
 	@foreach($follows as $follow)
 		<div class="card mb-2">
 			<div class="card-header">
-				<a href="{{ route('mypage', ['id' => $user->id]) }}" class="h2">＠{{ $follow->name }}</a>
+				<a href="{{ route('mypage', ['id' => $follow->id]) }}" class="h2">＠{{ $follow->name }}</a>
 			</div>
 		</div>
 	@endforeach

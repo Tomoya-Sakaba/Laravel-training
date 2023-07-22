@@ -16,7 +16,7 @@ class UserController extends Controller
 
 	public function postSignup(request $request)
 	{
-		$this->validate($request, [
+		$newUser = $this->validate($request, [
 			'name' => 'required',
 			'email' => 'email|required|unique:users',
 			'password' => 'required|min:8|confirmed'
@@ -30,8 +30,12 @@ class UserController extends Controller
 		]);
 
 		$user -> save();
+		//dd($user);
+		if (Auth::attempt($newUser)){
+			return redirect()->route('post');
+		};
 
-		return redirect()->route('post');
+		//return redirect()->route('post');
 	}
 
 	public function getLogin()
@@ -41,14 +45,14 @@ class UserController extends Controller
 
 	public function postLogin(request $request)
 	{
-		$this->validate($request, [
+		$user = $this->validate($request, [
 			'email' => 'email|required',
 			'password' => 'required|min:8'
 		]);
 
-		if (Auth::attempt(['email' => $request -> input('email'), 'password' => $request -> input('password'),])){
+		if (Auth::attempt($user)){
 			return redirect()->route('post');
-		}
+		};
 
 		return redirect()->back();
 	}
@@ -86,6 +90,7 @@ class UserController extends Controller
 			'user' => $user,
 			'follows' => $followings,
 		];
+		// $data = $data + $this->counts($user);
 		$data += $this->counts($user);
 		return view('user.followings', $data);
 	}

@@ -41,4 +41,5 @@
 			@endforeach
 		@endforeach
 	</div>
+	{{ $posts->links('pagination::bootstrap-4') }}
 @endsection

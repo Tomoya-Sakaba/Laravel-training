@@ -14,7 +14,7 @@ class PostsController extends Controller
     public function index()
 	{
 		//$posts = Post::all() -> sortByDesc('id');
-		$posts = Post::orderBy('id', 'desc')->get();
+		$posts = Post::orderBy('id', 'desc')->paginate(5);
 		return view('home', [
 			'posts' => $posts,
 		]);
@@ -22,7 +22,7 @@ class PostsController extends Controller
 
 	public function followIndex($id)
 	{
-		$posts = Post::orderBy('id', 'desc')->get();
+		$posts = Post::orderBy('id', 'desc')->paginate(5);
 		$user = User::find($id);
 		$followings = $user->followings()->get();
 
@@ -47,13 +47,13 @@ class PostsController extends Controller
 		$user = auth::user();
 		$posts = $user->posts()->orderBy('id', 'desc')->get();
 		return view('create', [
-			"user" => $user,
-			"posts" => $posts
+			"posts" => $posts,
 		]);
 	}
 
 	public function store(PostRequest $request)
 	{
+		dd($request);
 		DB::transaction(function () use ($request) {
 			//フォームに入力されたものをPostテーブルに入れ込む
 			$request->user()->posts()->create([

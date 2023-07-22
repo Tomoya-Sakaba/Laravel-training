@@ -9,16 +9,6 @@
 			</div>
 	</div>
 
-	@if (count($errors) > 0)
-	<div class="container">
-		<ul class="alert alert-danger">
-			@foreach ($errors->all() as $error)
-				<li class="ms-5">{{ $error }}</li>
-			@endforeach
-		</ul>
-	</div>
-	@endif
-
 	<div class="text-center">
 			<h3 class="login_title text-left d-inline-block mt-5">新規ユーザー登録</h3>
 		</div>
